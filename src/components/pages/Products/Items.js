@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { Link } from "react-router-dom";
 import styles from "../../../styles/Items.module.css";
 import ProductsContext from "../../../products/ProductsContext";
 
@@ -11,7 +12,9 @@ const Items = () => {
           return (
             <div key={el.id} className={styles.item}>
               <img src={el.image} alt={el.name} />
-              <h2>{el.name}</h2>
+              <Link to={el.id}>
+                <h2>{el.name}</h2>
+              </Link>
               <div>
                 <h2 className={styles.price}>{el.price}</h2>
                 <button onClick={() => addToCart(el)}>Add to Cart</button>

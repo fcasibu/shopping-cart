@@ -1,11 +1,11 @@
 import React from "react";
+import { Outlet } from "react-router-dom";
 import "../../../styles/Products.module.css";
-import Items from "./Items";
 
 const Products = () => {
   return (
     <React.Fragment>
-      <Items />
+      <Outlet />
     </React.Fragment>
   );
 };
