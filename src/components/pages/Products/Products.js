@@ -1,11 +1,11 @@
 import React from "react";
 import "../../../styles/Products.module.css";
-import Main from "./Main";
+import Items from "./Items";
 
 const Products = () => {
   return (
     <React.Fragment>
-      <Main />
+      <Items />
     </React.Fragment>
   );
 };

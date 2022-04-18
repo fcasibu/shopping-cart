@@ -1,11 +1,11 @@
 import React from "react";
 import "../../../styles/Home.module.css";
-import Main from "./Main";
+import Showcase from "./Showcase";
 
 const Home = () => {
   return (
     <React.Fragment>
-      <Main />
+      <Showcase />
     </React.Fragment>
   );
 };

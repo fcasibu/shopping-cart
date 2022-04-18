@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import styles from "../../../styles/Main.module.css";
+import styles from "../../../styles/Showcase.module.css";
 
-const Main = () => {
+const Showcase = () => {
   return (
     <main className={styles.main} aria-label="Homepage">
       <div>
@@ -16,4 +16,4 @@ const Main = () => {
   );
 };
 
-export default Main;
+export default Showcase;

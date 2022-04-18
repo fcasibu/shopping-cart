@@ -19,6 +19,12 @@
   box-sizing: border-box;
 }
 
+img {
+  max-width: 100%;
+  display: block;
+  height: auto;
+}
+
 a {
   text-decoration: none;
   color: var(--boulder-50);
