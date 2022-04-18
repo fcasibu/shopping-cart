@@ -3,6 +3,7 @@ import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import { BrowserRouter } from "react-router-dom";
 import Header from "../Header";
+import ProductsContext from "../../../products/ProductsContext";
 
 describe("Header", () => {
   it("renders the logo correctly", () => {
@@ -29,13 +30,15 @@ describe("Header", () => {
 
   it("renders the cart size correctly", () => {
     render(
-      <BrowserRouter>
-        <Header cartSize="7" />
-      </BrowserRouter>
+      <ProductsContext.Provider value={{ cart: [1, 2, 3, 4, 5, 6, 7, 8] }}>
+        <BrowserRouter>
+          <Header />
+        </BrowserRouter>
+      </ProductsContext.Provider>
     );
 
-    const size = screen.getByText("7");
+    const size = screen.getByText("8");
 
-    expect(size.textContent).toEqual("7");
+    expect(size.textContent).toEqual("8");
   });
 });
