@@ -1,0 +1,30 @@
+:root {
+  --boulder-50: #f7f7f7;
+  --boulder-100: #e3e3e3;
+  --boulder-200: #c8c8c8;
+  --boulder-300: #a4a4a4;
+  --boulder-400: #7d7d7d;
+  --boulder-500: #666666;
+  --boulder-600: #515151;
+  --boulder-700: #434343;
+  --boulder-800: #383838;
+  --boulder-900: #313131;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: var(--boulder-50);
+}
+
+body {
+  font-family: "Public Sans", sans-serif;
+  line-height: 1.6;
+}

@@ -1,0 +1,23 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background: var(--boulder-900);
+  color: var(--boulder-50);
+}
+
+.header nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.cart {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  background: var(--boulder-500);
+  border-radius: 9999px;
+  padding: 0.3rem 1rem;
+}

@@ -3,11 +3,7 @@ import "../../../styles/Products.module.css";
 import Header from "../../Header/Header";
 
 const Products = () => {
-  return (
-    <React.Fragment>
-      <Header />
-    </React.Fragment>
-  );
+  return <React.Fragment></React.Fragment>;
 };
 
 export default Products;

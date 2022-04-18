@@ -3,11 +3,7 @@ import "../../../styles/Cart.module.css";
 import Header from "../../Header/Header";
 
 const Cart = () => {
-  return (
-    <React.Fragment>
-      <Header />
-    </React.Fragment>
-  );
+  return <React.Fragment></React.Fragment>;
 };
 
 export default Cart;
