@@ -1,11 +1,12 @@
 import React from "react";
 import "../../../styles/Products.module.css";
+import Header from "../../Header/Header";
 
 const Products = () => {
   return (
-    <div>
-      <div></div>
-    </div>
+    <React.Fragment>
+      <Header />
+    </React.Fragment>
   );
 };
 
