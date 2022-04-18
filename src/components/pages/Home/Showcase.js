@@ -4,7 +4,7 @@ import styles from "../../../styles/Showcase.module.css";
 
 const Showcase = () => {
   return (
-    <main className={styles.main} aria-label="Homepage">
+    <main className={styles.showcase} aria-label="Homepage">
       <div>
         <h1>Chronkey Q3</h1>
         <h2>High quality, Best Value</h2>

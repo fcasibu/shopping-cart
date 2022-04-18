@@ -1,8 +1,45 @@
+.products {
+  padding: 2rem;
+}
+
 .items {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
 }
 
 .item {
-  
+  display: flex;
+  flex-direction: column;
+  border: 2px solid var(--boulder-100);
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.price {
+  color: goldenrod;
+}
+
+.item h2 {
+  font-size: 0.9rem;
+}
+
+.item > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+}
+
+.item button {
+  padding: 0.3rem 1rem;
+  background: none;
+  border: 2px solid var(--boulder-900);
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
+}
+
+.item button:hover {
+  background: var(--boulder-900);
+  color: var(--boulder-50);
 }

@@ -4,6 +4,7 @@ import ProductsContext from "./ProductsContext";
 
 const ProductsProvider = ({ children }) => {
   const [items, setItems] = useState([]);
+  const [cart, setCart] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -15,9 +16,14 @@ const ProductsProvider = ({ children }) => {
     fetchData();
   }, []);
 
+  const addToCart = (item) => {
+    setCart((state) => [...state, item]);
+  };
+
   const context = {
     items,
-    addToCart: () => {},
+    cart,
+    addToCart,
     removeFromCart: () => {},
   };
   return (
@@ -30,5 +36,5 @@ const ProductsProvider = ({ children }) => {
 export default ProductsProvider;
 
 ProductsProvider.propTypes = {
-  children: PropTypes.any.isRequired,
+  children: PropTypes.node.isRequired,
 };

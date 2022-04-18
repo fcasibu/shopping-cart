@@ -1,4 +1,4 @@
-.main {
+.showcase {
   background-image: url("../assets/images/showcase.webp");
   background-size: cover;
   color: white;
@@ -7,7 +7,7 @@
   overflow: hidden;
 }
 
-.main > div {
+.showcase > div {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -16,12 +16,12 @@
   height: 100%;
 }
 
-.main > div h1 {
+.showcase > div h1 {
   font-size: 3rem;
   line-height: 1;
 }
 
-.main > div button {
+.showcase > div button {
   background: none;
   color: var(--boulder-50);
   font-size: 1.1rem;
@@ -31,7 +31,7 @@
   transition: all 200ms ease-in-out;
 }
 
-.main > div button:hover {
+.showcase > div button:hover {
   background: var(--boulder-50);
   color: var(--boulder-900);
 }
