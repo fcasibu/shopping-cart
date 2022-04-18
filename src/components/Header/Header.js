@@ -9,7 +9,7 @@ const Header = ({ cartSize }) => {
   return (
     <React.Fragment>
       <header className={styles.header}>
-        <h2 aria-label="Site Title">Custom Keyboard</h2>
+        <h2 aria-label="Site Title">Fake ChronKey</h2>
         <nav aria-label="Navigation">
           <Link to="/">Home</Link>
           <Link to="/products">Products</Link>

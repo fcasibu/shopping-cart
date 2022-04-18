@@ -1,9 +1,13 @@
 import React from "react";
 import "../../../styles/Home.module.css";
-import Header from "../../Header/Header";
+import Main from "./Main";
 
 const Home = () => {
-  return <React.Fragment></React.Fragment>;
+  return (
+    <React.Fragment>
+      <Main />
+    </React.Fragment>
+  );
 };
 
 export default Home;

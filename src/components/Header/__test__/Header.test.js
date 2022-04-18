@@ -13,7 +13,7 @@ describe("Header", () => {
     );
     const title = screen.getByRole("heading", { name: "Site Title" });
 
-    expect(title.textContent).toMatch(/custom keyboard/i);
+    expect(title.textContent).toMatch(/fake chronkey/i);
   });
 
   it("renders the nav correctly", () => {
