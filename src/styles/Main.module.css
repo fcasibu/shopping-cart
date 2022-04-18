@@ -1,0 +1,37 @@
+.main {
+  background-image: url("../assets/images/showcase.webp");
+  background-size: cover;
+  color: white;
+  height: 100vh;
+  padding: 2rem;
+  overflow: hidden;
+}
+
+.main > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  height: 100%;
+}
+
+.main > div h1 {
+  font-size: 3rem;
+  line-height: 1;
+}
+
+.main > div button {
+  background: none;
+  color: var(--boulder-50);
+  font-size: 1.1rem;
+  border: 2px solid var(--boulder-50);
+  padding: 0.5rem 1.2rem;
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
+}
+
+.main > div button:hover {
+  background: var(--boulder-50);
+  color: var(--boulder-900);
+}
