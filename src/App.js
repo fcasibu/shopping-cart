@@ -7,6 +7,7 @@ import Products from "./components/pages/Products/Products";
 import ProductItem from "./components/pages/ProductItem/ProductItem";
 import Header from "./components/Header/Header";
 import ProductsProvider from "./products/ProductsProvider";
+import Items from "./components/pages/Products/Items";
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/products" element={<Products />}>
+            <Route index element={<Items />} />
             <Route path=":id" element={<ProductItem />} />
           </Route>
           <Route path="/cart" element={<Cart />} />
