@@ -5,7 +5,7 @@ import styles from "../../../styles/ProductItem.module.css";
 
 const ProductItem = () => {
   const { id } = useParams();
-  const { items, cart, addToCart, removeFromCart } =
+  const { items, cart, addToCart, removeFromCart, openCart } =
     useContext(ProductsContext);
   const [filteredItem] = items.filter((item) => item.id === id);
   const cartItems = cart.filter((item) => item.id === id);
@@ -42,7 +42,9 @@ const ProductItem = () => {
           </div>
         </div>
         <div className={styles.buttons}>
-          <button className={styles.btn}>Buy now</button>
+          <button className={styles.btn} onClick={openCart}>
+            Buy now
+          </button>
         </div>
       </div>
     </div>
