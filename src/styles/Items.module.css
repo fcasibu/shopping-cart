@@ -16,13 +16,13 @@
   padding: 1rem;
 }
 
-.price {
-  color: goldenrod;
-}
-
 .item h2 {
   font-size: 0.9rem;
   color: var(--boulder-900);
+}
+
+h2.price {
+  color: var(--boulder-500);
 }
 
 .item > div {
@@ -43,4 +43,13 @@
 .item button:hover {
   background: var(--boulder-900);
   color: var(--boulder-50);
+}
+
+.disabled {
+  background-color: none;
+  color: var(--boulder-900);
+  font-size: 0.8rem;
+  border: none;
+  font-style: italic;
+  pointer-events: none;
 }

@@ -17,7 +17,7 @@ const ProductsProvider = ({ children }) => {
   }, []);
 
   const addToCart = (item) => {
-    setCart((state) => [...state, item]);
+    setCart((state) => [...state, ...item]);
   };
 
   const context = {
