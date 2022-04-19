@@ -19,5 +19,15 @@
   align-items: center;
   background: var(--boulder-500);
   border-radius: 9999px;
-  padding: 0.3rem 1rem;
+  padding: 0.2rem 1.2rem;
+}
+
+@media (max-width: 720px) {
+  .header h2 {
+    display: none;
+  }
+
+  .header nav {
+    margin: 0 auto;
+  }
 }

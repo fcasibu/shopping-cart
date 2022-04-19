@@ -33,4 +33,5 @@ a {
 body {
   font-family: "Public Sans", sans-serif;
   line-height: 1.6;
+  overflow-x: hidden;
 }

@@ -1,6 +1,7 @@
 .showcase {
   background-image: url("../assets/images/showcase.webp");
   background-size: cover;
+  background-position: center center;
   color: white;
   height: 100vh;
   padding: 2rem;
@@ -34,4 +35,10 @@
 .showcase > div button:hover {
   background: var(--boulder-50);
   color: var(--boulder-900);
+}
+
+@media (max-width: 720px) {
+  .showcase > div {
+    text-align: center;
+  }
 }

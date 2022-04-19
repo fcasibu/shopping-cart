@@ -45,11 +45,23 @@ h2.price {
   color: var(--boulder-50);
 }
 
-.disabled {
+button.disabled {
   background-color: none;
   color: var(--boulder-900);
   font-size: 0.8rem;
-  border: none;
+  border: 0;
   font-style: italic;
   pointer-events: none;
+}
+
+@media (max-width: 720px) {
+  .items {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .items {
+    grid-template-columns: 1fr;
+  }
 }

@@ -1,8 +1,9 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
+import userEvent from "@testing-library/user-event";
 import { BrowserRouter } from "react-router-dom";
-import Products from "../Products";
+import Items from "../Items";
 import ProductsContext from "../../../../products/ProductsContext";
 
 const mockData = [
@@ -28,13 +29,14 @@ const mockData = [
 
 const mockContext = {
   items: mockData,
+  cart: mockData,
 };
 
 describe("Products", () => {
-  it("renders product page correctly", () => {
+  it("renders page correctly", () => {
     render(
       <BrowserRouter>
-        <Products />
+        <Items />
       </BrowserRouter>
     );
 
@@ -47,9 +49,29 @@ describe("Products", () => {
     render(
       <ProductsContext.Provider value={mockContext}>
         <BrowserRouter>
-          <Products />
+          <Items />
         </BrowserRouter>
       </ProductsContext.Provider>
     );
+
+    const items = screen.getAllByRole("img");
+
+    expect(items.length).toBe(3);
+  });
+
+  it("adds to cart correctly", () => {
+    render(
+      <ProductsContext.Provider value={mockContext}>
+        <BrowserRouter>
+          <Items />
+        </BrowserRouter>
+      </ProductsContext.Provider>
+    );
+
+    const btn = screen.getAllByRole("button");
+    for (let i = 0; i < btn.length; i++) {
+      userEvent.click(btn[i]);
+      expect(btn[i].textContent).toMatch(/added to cart/i);
+    }
   });
 });
