@@ -20,6 +20,7 @@
   background: var(--boulder-500);
   border-radius: 9999px;
   padding: 0.2rem 1.2rem;
+  cursor: pointer;
 }
 
 @media (max-width: 720px) {

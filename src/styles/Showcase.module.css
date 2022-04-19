@@ -3,9 +3,8 @@
   background-size: cover;
   background-position: center center;
   color: white;
-  height: 100vh;
+  height: 95vh;
   padding: 2rem;
-  overflow: hidden;
 }
 
 .showcase > div {
