@@ -7,6 +7,19 @@ const ProductsProvider = ({ children }) => {
   const [items, setItems] = useState([]);
   const [cart, setCart] = useState([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
+  const [filteredCart, setFilteredCart] = useState([]);
+  const counter = {};
+
+  useEffect(() => {
+    cart.forEach((item) => {
+      counter[JSON.stringify(item)] = (counter[JSON.stringify(item)] || 0) + 1;
+    });
+    const newCart = Object.entries(counter).map(([key, val]) => {
+      return { cartItem: JSON.parse(key), quantity: val };
+    });
+
+    setFilteredCart(newCart);
+  }, [cart]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -36,12 +49,13 @@ const ProductsProvider = ({ children }) => {
     const filterCart = cart.filter((item) => item.name === name);
     const newCart = cart.filter((item) => item.name !== filterCart[0].name);
     filterCart.splice(filterCart.length - 1, 1);
-    setCart([...newCart, ...filterCart]);
+    setCart([...filterCart, ...newCart]);
   };
 
   const context = {
     items,
     cart,
+    filteredCart,
     addToCart,
     removeFromCart,
     openCart,
