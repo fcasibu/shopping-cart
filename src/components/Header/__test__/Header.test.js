@@ -12,9 +12,9 @@ describe("Header", () => {
         <Header />
       </BrowserRouter>
     );
-    const title = screen.getByRole("heading", { name: "Fake Chronkey" });
+    const title = screen.getByRole("heading", { name: "Chronkey" });
 
-    expect(title.textContent).toMatch(/fake chronkey/i);
+    expect(title.textContent).toMatch(/chronkey/i);
   });
 
   it("renders the nav correctly", () => {
