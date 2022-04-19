@@ -12,7 +12,8 @@ const Items = () => {
   };
 
   const isAddedToCart = (el) => {
-    if (cart.includes(el)) {
+    const isAdded = cart.some((item) => item.name === el.name);
+    if (isAdded) {
       return <button className={styles.disabled}>Added to Cart</button>;
     }
 
