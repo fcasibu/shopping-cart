@@ -23,7 +23,7 @@ const ProductsProvider = ({ children }) => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch(`/data/products.json`);
+      const response = await fetch(`data/products.json`);
       const data = await response.json();
       setItems(data);
     };

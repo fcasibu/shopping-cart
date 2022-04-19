@@ -29,7 +29,6 @@ const CartModal = ({ onClose, hide, cart, addToCart, removeFromCart }) => {
       }
     }
     setSubTotal(formatter.format(total));
-    console.log(total);
   }, [cart]);
 
   const increaseQuantity = (event) => {
