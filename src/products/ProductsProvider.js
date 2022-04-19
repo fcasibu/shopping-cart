@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import ProductsContext from "./ProductsContext";
+import Cart from "../components/pages/Cart/Cart";
 
 const ProductsProvider = ({ children }) => {
   const [items, setItems] = useState([]);
   const [cart, setCart] = useState([]);
+  const [isCartOpen, setIsCartOpen] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -15,6 +17,16 @@ const ProductsProvider = ({ children }) => {
 
     fetchData();
   }, []);
+
+  const openCart = () => {
+    setIsCartOpen(true);
+  };
+
+  const closeCart = () => {
+    setTimeout(() => {
+      setIsCartOpen(false);
+    }, 300);
+  };
 
   const addToCart = (item) => {
     setCart((state) => [...state, item]);
@@ -32,10 +44,13 @@ const ProductsProvider = ({ children }) => {
     cart,
     addToCart,
     removeFromCart,
+    openCart,
+    closeCart,
   };
   return (
     <ProductsContext.Provider value={context}>
       {children}
+      {isCartOpen && <Cart />}
     </ProductsContext.Provider>
   );
 };

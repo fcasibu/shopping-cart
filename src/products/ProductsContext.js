@@ -5,6 +5,8 @@ const ProductsContext = React.createContext({
   cart: [],
   addToCart: () => {},
   removeFromCart: () => {},
+  openCart: () => {},
+  closeCart: () => {},
 });
 
 export default ProductsContext;
