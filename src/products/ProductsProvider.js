@@ -17,14 +17,21 @@ const ProductsProvider = ({ children }) => {
   }, []);
 
   const addToCart = (item) => {
-    setCart((state) => [...state, ...item]);
+    setCart((state) => [...state, item]);
+  };
+
+  const removeFromCart = (name) => {
+    const filterCart = cart.filter((item) => item.name === name);
+    const newCart = cart.filter((item) => item.name !== filterCart[0].name);
+    filterCart.splice(filterCart.length - 1, 1);
+    setCart([...newCart, ...filterCart]);
   };
 
   const context = {
     items,
     cart,
     addToCart,
-    removeFromCart: () => {},
+    removeFromCart,
   };
   return (
     <ProductsContext.Provider value={context}>

@@ -11,7 +11,7 @@ describe("Home", () => {
         <Home />
       </BrowserRouter>
     );
-    const home = screen.getByRole("main", { name: "Homepage" });
+    const home = screen.getByRole("main");
     expect(home).toBeInTheDocument();
   });
 

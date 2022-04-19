@@ -11,13 +11,13 @@ const Header = () => {
   return (
     <React.Fragment>
       <header className={styles.header}>
-        <h2 aria-label="Site Title">Fake ChronKey</h2>
-        <nav aria-label="Navigation">
+        <h2>Fake Chronkey</h2>
+        <nav>
           <Link to="/">Home</Link>
           <Link to="/products">Products</Link>
           <Link to="/cart" className={styles.cart}>
             <FontAwesomeIcon icon={faShoppingCart} />
-            <span aria-label="Cart Size">{cart.length}</span>
+            <span>{cart.length}</span>
           </Link>
         </nav>
       </header>

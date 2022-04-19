@@ -7,13 +7,13 @@ const Items = () => {
   const { items, cart, addToCart } = useContext(ProductsContext);
 
   const addToCartHandler = ({ target: btn }) => {
-    const filteredItem = items.filter((item) => item.id === btn.id);
+    const [filteredItem] = items.filter((item) => item.id === btn.id);
     addToCart(filteredItem);
   };
 
   const isAddedToCart = (el) => {
     if (cart.includes(el)) {
-      return <p className={styles.disabled}>Added to Cart</p>;
+      return <button className={styles.disabled}>Added to Cart</button>;
     }
 
     return (
@@ -24,7 +24,7 @@ const Items = () => {
   };
 
   return (
-    <main aria-label="Products Page" className={styles.products}>
+    <main className={styles.products}>
       <div className={styles.items}>
         {items.map((el) => {
           return (

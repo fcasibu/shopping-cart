@@ -12,7 +12,7 @@ describe("Header", () => {
         <Header />
       </BrowserRouter>
     );
-    const title = screen.getByRole("heading", { name: "Site Title" });
+    const title = screen.getByRole("heading", { name: "Fake Chronkey" });
 
     expect(title.textContent).toMatch(/fake chronkey/i);
   });
@@ -23,7 +23,7 @@ describe("Header", () => {
         <Header />
       </BrowserRouter>
     );
-    const navbar = screen.getByRole("navigation", { name: "Navigation" });
+    const navbar = screen.getByRole("navigation");
 
     expect(navbar.children.length).toBe(3);
   });

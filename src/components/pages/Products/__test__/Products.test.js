@@ -40,7 +40,7 @@ describe("Products", () => {
       </BrowserRouter>
     );
 
-    const products = screen.getByRole("main", { name: "Products Page" });
+    const products = screen.getByRole("main");
 
     expect(products).toBeInTheDocument();
   });
