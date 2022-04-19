@@ -152,7 +152,6 @@ CartModal.propTypes = {
   removeFromCart: PropTypes.func,
   hide: PropTypes.bool,
   cart: PropTypes.arrayOf(PropTypes.object),
-  counter: PropTypes.object,
 };
 Backdrop.propTypes = {
   onClose: PropTypes.func,
