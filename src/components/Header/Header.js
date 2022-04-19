@@ -7,7 +7,7 @@ import styles from "../../styles/Header.module.css";
 import ProductsContext from "../../products/ProductsContext";
 
 const Header = () => {
-  const { cart } = useContext(ProductsContext);
+  const { cart, openCart } = useContext(ProductsContext);
   return (
     <React.Fragment>
       <header className={styles.header}>
@@ -15,10 +15,10 @@ const Header = () => {
         <nav>
           <Link to="/">Home</Link>
           <Link to="/products">Products</Link>
-          <Link to="/cart" className={styles.cart}>
+          <div className={styles.cart} onClick={openCart}>
             <FontAwesomeIcon icon={faShoppingCart} />
             <span>{cart.length}</span>
-          </Link>
+          </div>
         </nav>
       </header>
     </React.Fragment>
