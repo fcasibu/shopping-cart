@@ -26,28 +26,32 @@ const ProductItem = () => {
   };
 
   return (
-    <div className={styles.product}>
-      <div className={styles["product-image"]}>
-        <img src={filteredItem.image} alt={filteredItem.name} />
-      </div>
-      <div className={styles["product-info"]}>
-        <h1>{filteredItem.name}</h1>
-        <h2>{filteredItem.price}</h2>
-        <div className={styles.quantity}>
-          <label>Quantity</label>
-          <div>
-            <button onClick={decreaseQuantity}>-</button>
-            <input type="number" readOnly value={itemQuantity} max="5" />
-            <button onClick={increaseQuantity}>+</button>
+    <React.Fragment>
+      {filteredItem && (
+        <div className={styles.product}>
+          <div className={styles["product-image"]}>
+            <img src={filteredItem.image} alt={filteredItem.name} />
+          </div>
+          <div className={styles["product-info"]}>
+            <h1>{filteredItem.name}</h1>
+            <h2>{filteredItem.price}</h2>
+            <div className={styles.quantity}>
+              <label>Quantity</label>
+              <div>
+                <button onClick={decreaseQuantity}>-</button>
+                <input type="number" readOnly value={itemQuantity} max="5" />
+                <button onClick={increaseQuantity}>+</button>
+              </div>
+            </div>
+            <div className={styles.buttons}>
+              <button className={styles.btn} onClick={openCart}>
+                Buy now
+              </button>
+            </div>
           </div>
         </div>
-        <div className={styles.buttons}>
-          <button className={styles.btn} onClick={openCart}>
-            Buy now
-          </button>
-        </div>
-      </div>
-    </div>
+      )}
+    </React.Fragment>
   );
 };
 
