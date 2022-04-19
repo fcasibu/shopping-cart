@@ -14,7 +14,9 @@
   position: fixed;
   top: 0;
   right: 0;
-  background: var(--boulder-50);
+  display: flex;
+  flex-direction: column;
+  background: white;
   width: 400px;
   height: 100vh;
   padding: 1rem;
@@ -23,16 +25,102 @@
   transition: all 400ms ease-in-out;
 }
 
-.cart > div {
+.top-cart {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.cart > div div {
+.cart .close {
   font-size: 1.2rem;
   font-weight: bold;
   cursor: pointer;
+}
+
+.items-container {
+  overflow-y: scroll;
+  height: 350px;
+}
+
+.items-container > h2 {
+  text-align: center;
+  padding-top: 5rem;
+}
+
+.cart-items {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem 0.5rem;
+}
+
+.product-image {
+  width: 100px;
+  flex: 0.7;
+}
+
+.product-info {
+  flex: 1;
+}
+
+.product-info * {
+  font-size: 0.8rem;
+}
+
+.quantity {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: flex-start;
+}
+
+.quantity div {
+  height: max-content;
+  outline: 1px solid var(--boulder-100);
+}
+
+.quantity input[type="number"] {
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
+  text-align: center;
+  border: 0;
+  outline: 0;
+  pointer-events: none;
+  width: 50px;
+}
+
+.quantity input[type="number"]::-webkit-inner-spin-button,
+.quantity input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+.quantity button {
+  border: 0;
+  background: var(--boulder-50);
+  font-size: 1rem;
+  padding: 0.3rem;
+  cursor: pointer;
+}
+
+.payout {
+  margin: auto 0;
+}
+
+.checkout {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  background: var(--boulder-700);
+  color: var(--boulder-50);
+  font-weight: bold;
+  border: 0;
+  cursor: pointer;
+}
+
+.total {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.1rem;
+  font-weight: normal;
 }
 
 @keyframes slideCart {
