@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import "./styles/global.css";
 import Home from "./components/pages/Home/Home";
 import Products from "./components/pages/Products/Products";
@@ -11,16 +11,16 @@ import Items from "./components/pages/Products/Items";
 const App = () => {
   return (
     <ProductsProvider>
-      <BrowserRouter basename="/shopping-cart">
+      <Router basename="/">
         <Header />
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route exact path="/" element={<Home />} />
           <Route path="/products" element={<Products />}>
             <Route index element={<Items />} />
             <Route path=":id" element={<ProductItem />} />
           </Route>
         </Routes>
-      </BrowserRouter>
+      </Router>
     </ProductsProvider>
   );
 };
