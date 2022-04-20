@@ -7,9 +7,9 @@ const ProductItem = () => {
   const { id } = useParams();
   const { items, cart, addToCart, removeFromCart, openCart } =
     useContext(ProductsContext);
-  const [filteredItem] = items.filter((item) => item.id === id);
   const cartItems = cart.filter((item) => item.id === id);
   const [itemQuantity, setItemQuantity] = useState(cartItems.length);
+  const [filteredItem] = items.filter((item) => item.id === id);
 
   const increaseQuantity = () => {
     if (itemQuantity < 5) {
@@ -39,7 +39,7 @@ const ProductItem = () => {
               <label>Quantity</label>
               <div>
                 <button onClick={decreaseQuantity}>-</button>
-                <input type="number" readOnly value={itemQuantity} max="5" />
+                <input type="number" readOnly value={itemQuantity} />
                 <button onClick={increaseQuantity}>+</button>
               </div>
             </div>

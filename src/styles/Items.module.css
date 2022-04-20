@@ -16,6 +16,10 @@
   padding: 1rem;
 }
 
+.image-container {
+  
+}
+
 .item h2 {
   font-size: 0.9rem;
   color: var(--boulder-900);

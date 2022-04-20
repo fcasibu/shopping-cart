@@ -11,37 +11,41 @@ const Items = () => {
     addToCart(filteredItem);
   };
 
-  const isAddedToCart = (el) => {
-    const isAdded = cart.some((item) => item.name === el.name);
+  const isAddedToCart = (item) => {
+    const isAdded = cart.some((el) => el.name === item.name);
     if (isAdded) {
       return <button className={styles.disabled}>Added to Cart</button>;
     }
 
     return (
-      <button id={el.id} onClick={(e) => addToCartHandler(e)}>
+      <button id={item.id} onClick={(e) => addToCartHandler(e)}>
         Add To Cart
       </button>
     );
   };
 
+  const renderItems = () => {
+    return items.map((item) => {
+      return (
+        <div key={item.id} className={styles.item}>
+          <Link to={item.id}>
+            <div className={styles["image-container"]}>
+              <img src={item.image} alt={item.name} />
+            </div>
+            <h2>{item.name}</h2>
+          </Link>
+          <div>
+            <h2 className={styles.price}>{item.price}</h2>
+            {isAddedToCart(item)}
+          </div>
+        </div>
+      );
+    });
+  };
+
   return (
     <main className={styles.products}>
-      <div className={styles.items}>
-        {items.map((el) => {
-          return (
-            <div key={el.id} className={styles.item}>
-              <Link to={el.id}>
-                <img src={el.image} alt={el.name} />
-                <h2>{el.name}</h2>
-              </Link>
-              <div>
-                <h2 className={styles.price}>{el.price}</h2>
-                {isAddedToCart(el)}
-              </div>
-            </div>
-          );
-        })}
-      </div>
+      <div className={styles.items}>{renderItems()}</div>
     </main>
   );
 };
