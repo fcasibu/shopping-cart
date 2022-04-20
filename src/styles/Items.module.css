@@ -6,6 +6,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
+  margin-top: 3rem;
 }
 
 .item {
@@ -17,7 +18,8 @@
 }
 
 .image-container {
-  
+  display: grid;
+  place-items: center;
 }
 
 .item h2 {

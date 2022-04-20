@@ -10,7 +10,9 @@ const Header = () => {
   return (
     <React.Fragment>
       <header className={styles.header}>
-        <h2>Chronkey</h2>
+        <Link to="/">
+          <h2>Chronkey</h2>
+        </Link>
         <nav>
           <Link to="/">Home</Link>
           <Link to="/products">Products</Link>

@@ -30,7 +30,7 @@ const Items = () => {
         <div key={item.id} className={styles.item}>
           <Link to={item.id}>
             <div className={styles["image-container"]}>
-              <img src={item.image} alt={item.name} />
+              <img height="250" width="250" src={item.image} alt={item.name} />
             </div>
             <h2>{item.name}</h2>
           </Link>
